@@ -86,9 +86,9 @@
 				E74A09FA19DD904E0000BCBE /* Views */,
 				E74A09F919DD8F9D0000BCBE /* Controllers */,
 				E74A09FB19DD90830000BCBE /* Model */,
-				E74A09FD19DD90B10000BCBE /* Resources */,
 				E74A09FC19DD90930000BCBE /* App */,
 				E74A09FF19DD90E30000BCBE /* CoreData */,
+				E74A09FD19DD90B10000BCBE /* Resources */,
 			);
 			path = BlackAndWhite;
 			sourceTree = "<group>";
