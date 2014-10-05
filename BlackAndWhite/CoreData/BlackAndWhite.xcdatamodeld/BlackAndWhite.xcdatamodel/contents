@@ -1,4 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="1.0" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6244" systemVersion="13F34" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Category" representedClassName="Category" elementID="CategoryEntity" versionHashModifier="1" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" versionHashModifier="1" elementID="CategoryName" syncable="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Item" inverseName="category" inverseEntity="Item" versionHashModifier="1" elementID="CategoryItemsSet" syncable="YES"/>
+    </entity>
+    <entity name="Item" elementID="ItemEntity" versionHashModifier="1" syncable="YES">
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="items" inverseEntity="Category" versionHashModifier="1" elementID="ItemCategory" syncable="YES"/>
+        <relationship name="manufacturer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Manufacturer" inverseName="items" inverseEntity="Manufacturer" versionHashModifier="1" elementID="ItemManufacturer" syncable="YES"/>
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="items" inverseEntity="Tag" versionHashModifier="1" elementID="ItemTagsSet" syncable="YES"/>
+    </entity>
+    <entity name="List" representedClassName="List" elementID="ListEntity" versionHashModifier="1" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" versionHashModifier="1" elementID="ListName" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" versionHashModifier="1" elementID="ListType" syncable="YES"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="lists" inverseEntity="User" versionHashModifier="1" elementID="ListOwner" syncable="YES"/>
+    </entity>
+    <entity name="Manufacturer" representedClassName="Manufacturer" elementID="ManufacturerEntity" versionHashModifier="1" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" versionHashModifier="1" elementID="ManufacturerName" syncable="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Item" inverseName="manufacturer" inverseEntity="Item" versionHashModifier="1" elementID="ManufacturerItemsSet" syncable="YES"/>
+    </entity>
+    <entity name="Tag" representedClassName="Tag" elementID="TagEntity" versionHashModifier="1" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" versionHashModifier="1" elementID="TagName" syncable="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="tags" inverseEntity="Item" versionHashModifier="1" elementID="TagItemsSet" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" elementID="UserEntity" versionHashModifier="1" syncable="YES">
+        <attribute name="creationDate" optional="YES" attributeType="Date" versionHashModifier="1" elementID="UserCreationDate" syncable="YES"/>
+        <relationship name="lists" optional="YES" toMany="YES" maxCount="2" deletionRule="Cascade" destinationEntity="List" inverseName="owner" inverseEntity="List" versionHashModifier="1" elementID="UserListsSet" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Category" positionX="-3071" positionY="-3357" width="128" height="73"/>
+        <element name="Item" positionX="-3258" positionY="-3274" width="128" height="88"/>
+        <element name="List" positionX="-3089" positionY="-3474" width="128" height="88"/>
+        <element name="User" positionX="-2918" positionY="-3501" width="128" height="73"/>
+        <element name="Manufacturer" positionX="-3071" positionY="-3268" width="128" height="73"/>
+        <element name="Tag" positionX="-3071" positionY="-3178" width="128" height="73"/>
+    </elements>
 </model>
