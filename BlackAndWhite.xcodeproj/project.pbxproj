@@ -16,7 +16,9 @@
 		E74A09F019DD8EA90000BCBE /* BlackAndWhiteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E74A09EF19DD8EA90000BCBE /* BlackAndWhiteTests.m */; };
 		E74A0A0219DD91470000BCBE /* BlackAndWhite.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E74A0A0019DD91470000BCBE /* BlackAndWhite.xcdatamodeld */; };
 		E74A0A0419DD91760000BCBE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E74A0A0319DD91760000BCBE /* Images.xcassets */; };
-		E74A0A0A19DDEE520000BCBE /* BAWBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E74A0A0919DDEE520000BCBE /* BAWBaseViewController.m */; };
+		E74A0A0A19DDEE520000BCBE /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E74A0A0919DDEE520000BCBE /* BaseViewController.m */; };
+		E760632919E1D0AD00F9FB1F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E760632819E1D0AD00F9FB1F /* AVFoundation.framework */; };
+		E760632C19E2084F00F9FB1F /* BAWNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E760632B19E2084F00F9FB1F /* BAWNavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +49,11 @@
 		E74A0A0119DD91470000BCBE /* BlackAndWhite.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BlackAndWhite.xcdatamodel; sourceTree = "<group>"; };
 		E74A0A0319DD91760000BCBE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E74A0A0619DDEBE20000BCBE /* BAWCommonMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BAWCommonMacros.h; sourceTree = "<group>"; };
-		E74A0A0819DDEE520000BCBE /* BAWBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAWBaseViewController.h; sourceTree = "<group>"; };
-		E74A0A0919DDEE520000BCBE /* BAWBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAWBaseViewController.m; sourceTree = "<group>"; };
+		E74A0A0819DDEE520000BCBE /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		E74A0A0919DDEE520000BCBE /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		E760632819E1D0AD00F9FB1F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		E760632A19E2084F00F9FB1F /* BAWNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAWNavigationController.h; sourceTree = "<group>"; };
+		E760632B19E2084F00F9FB1F /* BAWNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAWNavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E760632919E1D0AD00F9FB1F /* AVFoundation.framework in Frameworks */,
 				7BF5C7BD492846FB9FB5C4AF /* libPods-BlackAndWhite.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,6 +79,7 @@
 		CEC95E7A647348CEACD9C73A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E760632819E1D0AD00F9FB1F /* AVFoundation.framework */,
 				1F6F5681DF4042F98F721399 /* libPods-BlackAndWhite.a */,
 			);
 			name = Frameworks;
@@ -210,8 +217,10 @@
 		E74A0A0719DDEE200000BCBE /* Base controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E74A0A0819DDEE520000BCBE /* BAWBaseViewController.h */,
-				E74A0A0919DDEE520000BCBE /* BAWBaseViewController.m */,
+				E74A0A0819DDEE520000BCBE /* BaseViewController.h */,
+				E74A0A0919DDEE520000BCBE /* BaseViewController.m */,
+				E760632A19E2084F00F9FB1F /* BAWNavigationController.h */,
+				E760632B19E2084F00F9FB1F /* BAWNavigationController.m */,
 			);
 			name = "Base controllers";
 			sourceTree = "<group>";
@@ -353,7 +362,8 @@
 			files = (
 				E74A09D619DD8EA80000BCBE /* AppDelegate.m in Sources */,
 				E74A09D319DD8EA80000BCBE /* main.m in Sources */,
-				E74A0A0A19DDEE520000BCBE /* BAWBaseViewController.m in Sources */,
+				E760632C19E2084F00F9FB1F /* BAWNavigationController.m in Sources */,
+				E74A0A0A19DDEE520000BCBE /* BaseViewController.m in Sources */,
 				E74A09DC19DD8EA90000BCBE /* ViewController.m in Sources */,
 				E74A0A0219DD91470000BCBE /* BlackAndWhite.xcdatamodeld in Sources */,
 			);

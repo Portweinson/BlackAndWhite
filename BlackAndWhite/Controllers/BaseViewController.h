@@ -1,5 +1,5 @@
 //
-//  BAWBaseViewController.h
+//  BaseViewController.h
 //  BlackAndWhite
 //
 //  Created by Вячеслав Ембатуров on 03.10.14.
@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "BAWCommonMacros.h"
 
-@interface BAWBaseViewController : UIViewController
+@interface BaseViewController : UIViewController
 
 @end
