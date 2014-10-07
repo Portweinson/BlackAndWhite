@@ -11,4 +11,7 @@
 
 @interface BaseViewController : UIViewController
 
+- (void)handleApplicationWillEnterForeground:(NSNotification *)notification;
+- (void)handleApplicationDidEnterBackground:(NSNotification *)notification;
+
 @end

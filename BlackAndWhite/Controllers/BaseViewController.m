@@ -25,28 +25,52 @@
     [super viewDidLoad];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
     [NOTIFICATION_CENTER addObserver:self
-                            selector:@selector(applicationWillEnterForeground:)
+                            selector:@selector(handleApplicationWillEnterForeground:)
                                 name:UIApplicationWillEnterForegroundNotification
                               object:nil];
     [NOTIFICATION_CENTER addObserver:self
-                            selector:@selector(applicationDidEnterBackground:)
+                            selector:@selector(handleApplicationDidEnterBackground:)
                                 name:UIApplicationDidEnterBackgroundNotification
                               object:nil];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
+    [NOTIFICATION_CENTER removeObserver:self
+                                   name:UIApplicationWillEnterForegroundNotification
+                                 object:nil];
+    [NOTIFICATION_CENTER removeObserver:self
+                                   name:UIApplicationDidEnterBackgroundNotification
+                                 object:nil];
+    
     [super viewDidDisappear:animated];
+}
+
+
+#pragma mark - Memory management
+
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+}
+
+
+#pragma mark - Notification Handlers
+
+- (void)handleApplicationWillEnterForeground:(NSNotification *)notification
+{
+    
+}
+
+- (void)handleApplicationDidEnterBackground:(NSNotification *)notification
+{
+    
 }
 
 @end

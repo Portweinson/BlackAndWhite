@@ -17,6 +17,10 @@
 #define SHARED_APPLICATION [UIApplication sharedApplication]
 #define APP_DELEGATE ((AppDelegate *)[[UIApplication sharedApplication] delegate])
 
+#pragma mark -
+
+#define BundleID [[NSBundle mainBundle] bundleIdentifier]
+
 #pragma mark - NSString
 
 #define NSLS(str) NSLocalizedString(str, nil)
