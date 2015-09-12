@@ -12,6 +12,9 @@
 @interface Camera : NSObject
 
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer;
-@property (nonatomic, strong) AVCaptureMetadataOutput *metadataOutput;
+
+- (void)setupCaptureSession;
+- (void)startCamera;
+- (void)stopCamera;
 
 @end

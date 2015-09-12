@@ -15,6 +15,7 @@
 @property (nonatomic, strong) AVCaptureSession *session;
 @property (nonatomic, strong) AVCaptureDevice *videoDevice;
 @property (nonatomic, strong) AVCaptureDeviceInput *videoInput;
+@property (nonatomic, strong) AVCaptureMetadataOutput *metadataOutput;
 
 @end
 
@@ -47,7 +48,42 @@
         if ([self.session canAddOutput:self.metadataOutput]) {
             [self.session addOutput:self.metadataOutput];
         }
+        self.metadataOutput.metadataObjectTypes = [self.metadataOutput availableMetadataObjectTypes];
     }
+}
+
+- (void)startCamera
+{
+    if (! self.session) {
+        [self setupCaptureSession];
+    }
+    if (self.session && ! self.session.isRunning) {
+        [self.session startRunning];
+    }
+}
+
+- (void)stopCamera
+{
+    if (self.session.isRunning) {
+        [self.session stopRunning];
+    }
+}
+
+
+#pragma mark - AVCaptureMetadataOutputObjectsDelegate
+
+- (void)captureOutput:(AVCaptureOutput *)captureOutput
+didOutputMetadataObjects:(NSArray *)metadataObjects
+       fromConnection:(AVCaptureConnection *)connection
+{
+    [metadataObjects enumerateObjectsUsingBlock:^(AVMetadataObject *obj,
+                                                  NSUInteger idx,
+                                                  BOOL *stop) {
+         if ([obj isKindOfClass:[AVMetadataMachineReadableCodeObject class]]) {
+             
+             AVMetadataMachineReadableCodeObject *code = (AVMetadataMachineReadableCodeObject*) [self.previewLayer transformedMetadataObjectForMetadataObject:obj];
+         }
+     }];
 }
 
 @end
